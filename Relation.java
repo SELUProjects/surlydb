@@ -8,8 +8,11 @@ public class Relation
 	LinkedList<Tuple> tuples;
 	String name;
 
-	public class Relation
+	public Relation ( String name, LinkedList<Attribute> attributes ) 
 	{
 		
+		this.name = name;
+		this.attributes = attributes;
+
 	}
 }
