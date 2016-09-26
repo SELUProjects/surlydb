@@ -4,11 +4,11 @@ import java.util.LinkedList;
 public class Tuple
 {
 		
-		LinkedList<String> attributes
+		LinkedList<String> attributes;
 
 		public Tuple( LinkedList<String> attributes )
 		{
-			this.attributes= attributes
+			this.attributes= attributes;
 		}
 
 }
