@@ -1,32 +1,14 @@
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
 public class SurlyDB
 {
 
 	public static void main( String[] args )
 	{
 		
+		Database myDb = new Database();
 		String filename = "../sample_test_file.txt";
 
-		try 
-		{
-			BufferedReader br = new BufferedReader( new FileReader( filename ) );
-			String line;
-			while ( (line = br.readLine()) != null ) {
-				Parser parser = new Parser(line);
-				parser.parse();
-			}
-			br.close();
-		}
-		catch ( IOException e ) 
-		{
-			System.out.println( e );
-		}
+		Parser ps = new Parser( filename );
 
-		Database myDb = new Database();
-		System.out.println( myDb.getRelation( "COURSE" ) );
 	}
 }

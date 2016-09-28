@@ -24,4 +24,31 @@ public class Database
 		return null;
 	}
 
+	public int findRelation(String name)
+    {
+        int index = -1;
+
+        for(int i = 0 ; i < relations.size(); ++i)
+        {
+            if (name.equals(relations.get(i).name))
+            {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+	public void printRelation( String name )
+	{
+		int index = findRelation(name);
+        if (index == -1)
+        {
+            System.out.println("Relation not found: " + name);
+        }
+        else
+        {
+            relations.get(index).printRelation();
+        }
+	}
+
 }
