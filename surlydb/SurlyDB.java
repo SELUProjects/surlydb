@@ -6,16 +6,26 @@ import java.io.IOException;
 public class SurlyDB
 {
 
-	public static void main(String[] args) throws IOException {
+	public static void main( String[] args )
+	{
 		
 		String filename = "../sample_test_file.txt";
-		System.out.println("Hey");
+		
+		System.out.println( "\n" );
+		System.out.println( "Hey" );
 
-		//FileReader fr = new FileReader("../sample_test_file.txt");
-		BufferedReader br = new BufferedReader( new FileReader(filename) );
-		while ( br.readLine() != null ) {
-			System.out.println( br.readLine() );
-			System.out.println( "\n" );
+		try 
+		{
+			BufferedReader br = new BufferedReader( new FileReader( filename ) );
+			String line;
+			while ( (line = br.readLine()) != null ) {
+				System.out.println( line );
+			}
+			br.close();
+		}
+		catch ( IOException e ) 
+		{
+			System.out.println( e );
 		}
 	}
 }
