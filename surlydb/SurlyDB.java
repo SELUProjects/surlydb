@@ -10,16 +10,14 @@ public class SurlyDB
 	{
 		
 		String filename = "../sample_test_file.txt";
-		
-		System.out.println( "\n" );
-		System.out.println( "Hey" );
 
 		try 
 		{
 			BufferedReader br = new BufferedReader( new FileReader( filename ) );
 			String line;
 			while ( (line = br.readLine()) != null ) {
-				System.out.println( line );
+				Parser parser = new Parser(line);
+				parser.parse();
 			}
 			br.close();
 		}

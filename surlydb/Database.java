@@ -1,35 +1,42 @@
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Database
 {
 
 	LinkedList<Relation> relations = new LinkedList<>();
 
-	public Database () 
-	{
+	// public Database () 
+	// {
 
+	// }
+
+	public void addRelation ( Relation relation )
+	{
+		relations.add(relation);
 	}
 
-	public void setRelation ()
+	public Relation getRelation ( String name )
 	{
 
-	}
-
-	public Relation getRelation ()
-	{
+		for ( Relation relation : relations ){
+			if ( relation.name.equals( name ) )	{
+				return relation;
+			}
+		}
 
 		return null;
 	}
 
-	public void insert ()
-	{
+	// public void insert ()
+	// {
 
-	}
+	// }
 
-	public boolean delete ()
-	{
-		return false;
-	}
+	// public boolean delete ()
+	// {
+	// 	return false;
+	// }
 
 }

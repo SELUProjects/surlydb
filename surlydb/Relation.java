@@ -5,7 +5,7 @@ public class Relation
 {
 	
 	LinkedList<Attribute> attributes;
-	LinkedList<Tuple> tuples;
+	LinkedList<Tuple> values;
 	String name;
 
 	public Relation ( String name, LinkedList<Attribute> attributes ) 
@@ -13,6 +13,16 @@ public class Relation
 		
 		this.name = name;
 		this.attributes = attributes;
+		this.values = new LinkedList<>();
+	}
+
+	public void addValues ( Tuple tuple )
+	{
+		values.add(tuple);
+	}
+
+	public void printRelation () 
+	{
 
 	}
 }
