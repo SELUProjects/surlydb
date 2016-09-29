@@ -25,5 +25,8 @@ public class SurlyDB
 		{
 			System.out.println( e );
 		}
+
+		Database myDb = new Database();
+		System.out.println( myDb.getRelation( "COURSE" ) );
 	}
 }

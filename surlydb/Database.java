@@ -7,36 +7,21 @@ public class Database
 
 	LinkedList<Relation> relations = new LinkedList<>();
 
-	// public Database () 
-	// {
-
-	// }
-
 	public void addRelation ( Relation relation )
 	{
 		relations.add(relation);
 	}
 
-	public Relation getRelation ( String name )
+	public Relation getRelation ( String relName )
 	{
 
 		for ( Relation relation : relations ){
-			if ( relation.name.equals( name ) )	{
+			if ( relation.name.equals( relName ) )	{
 				return relation;
 			}
 		}
 
 		return null;
 	}
-
-	// public void insert ()
-	// {
-
-	// }
-
-	// public boolean delete ()
-	// {
-	// 	return false;
-	// }
 
 }

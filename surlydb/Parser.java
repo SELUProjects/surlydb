@@ -1,13 +1,8 @@
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Parser
 {
 
-	// String[] command = {"RELATION", "INSERT", "PRINT", "INDEX", "CATALOG"};
-	List<String> commands = Arrays.asList("RELATION", "INSERT", "PRINT", "INDEX", "CATALOG");
+	Database db = new Database();
 	String cmdString;
 
 	public Parser ( String cmdString )
@@ -17,37 +12,34 @@ public class Parser
 
 	public void parse ()
 	{
-		String[] subString = cmdString.split(" ");
 
-		// System.out.printf( "\n%s \n", subString[0] );
-
-		// for ( int i=0; i<subString.length; i++ )
-		// {
-		// 	System.out.printf( "%d %s ", i, subString[i] );
-		// }
+		String[] subString = cmdString.split(" ", 3);
 
 		switch ( subString[0] )
 		{
 			case "RELATION":
-				System.out.println( "Relation" );
+				db.addRelation( Command.executeRelation( subString[1], subString[2] ) );
 				break;
 			case "INSERT":
-				System.out.println( "Insert" );
+				Command.executeInsert( subString[1], subString[2] );
 				break;
 			case "PRINT":
-				System.out.println( "Print" );
+				Command.executePrint( subString[1], subString[2] );
 				break;
 			case "INDEX":
-				System.out.println( "Index" );
+				Command.executeIndex( subString[1], subString[2] );
 				break;
 			case "CATALOG":
-				System.out.println( "Catalog" );
+				Command.executeCatalog( subString[1], subString[2] );
+				break;
+			case "/*":
+				System.out.println( "just a comment" );
 				break;
 			default:
 				System.out.println( "What you talkin' about Willis?" );
 				break;
-				
+
 		}
 	}
-
+	
 }

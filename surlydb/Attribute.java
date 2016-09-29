@@ -3,8 +3,9 @@ public class Attribute
 {
 	String name;
 	String dataType;
+	int length;
 
-	public Attribute( String name, String dataType )
+	public Attribute( String name, String dataType, int length )
 	{
 		this.name = name;
 		String inputType = dataType.toLowerCase();
@@ -28,6 +29,8 @@ public class Attribute
 		if ( inputType.equals("string") ) {
 			this.dataType = "string";
 		}
+
+		this.length = length;
 
 	}
 }
